@@ -1,0 +1,2 @@
+# ffmpegCommandGenerator
+適当にffmpegのコマンドを出力する
