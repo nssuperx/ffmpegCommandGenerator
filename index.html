@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="main.js"></script>
+    <title>ffmpegCommandGenerator</title>
+</head>
+
+<body>
+    <h1>ffmpegCommandGenerator</h1>
+    <p>
+        適当にコマンドを生成します。変換したいファイルがあるディレクトリで、生成されるコマンドを実行してください。<br>
+        ファイルの選択ボタンにドラッグアンドドロップでもOK。
+    </p>
+    <input type="file" multiple id="inputButton">
+    <table id="fileTable">
+        <tr>
+            <th>入力ファイル</th>
+            <th>出力ファイル</th>
+        </tr>
+    </table>
+
+    <h2>オプション</h2>
+    <table>
+        <tr>
+            <td>コンテナ</td>
+            <td><select id="container"></select></td>
+        </tr>
+        <tr>
+            <td>動画コーデック</td>
+            <td><select id="vcodec"></select></td>
+        </tr>
+        <tr>
+            <td>音声コーデック</td>
+            <td><select id="acodec"></select></td>
+        </tr>
+        <tr>
+            <td>フレームレート</td>
+            <td><input type="number" id="framerate" min="1" max="300" value="60"></td>
+        </tr>
+        <tr>
+            <td>固定フレームレート化</td>
+            <td><input type="checkbox" id="iscfr"></td>
+            <td style="padding-left: 40px;">※入力が可変フレームレートのときチェック</td>
+        </tr>
+    </table>
+
+    <h3>追加オプション（任意）</h3>
+    <input type="text" id="addtionalOption">
+
+    <h2>コマンド生成</h2>
+    <input type="button" value="生成" id="generateButton">
+    <input type="button" value="クリップボードにコピー" id="copyCommandButton">
+    <br>
+    <textarea id="outCommandArea" readonly></textarea>
+
+    <h2>今後つけるかもしれない機能</h2>
+    <ul>
+        <li>コーデック、コンテナの任意指定</li>
+        <li>ディレクトリの一括指定</li>
+        <ul><li>出力ファイルは別ディレクトリに置きたいときの機能</li></ul>
+        <li>ライトテーマ、ダークテーマの切り替え</li>
+    </ul>
+
+    <footer>
+        <a href="https://github.com/nssuperx/ffmpegCommandGenerator">GitHub</a>
+    </footer>
+</body>
+
+</html>
